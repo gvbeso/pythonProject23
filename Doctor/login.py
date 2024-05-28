@@ -14,10 +14,9 @@ Builder.load_string("""
         MDBoxLayout:
             size_hint_y:0.35
             MDLabel:
-                text:"Registration"
+                text:"B A U"
                 halign:"center"
                 font_size:'64sp'
-                font_name:"DejaVuSans.ttf"
                 theme_text_color:'Custom'
                 text_color:app.theme_cls.primary_color
                 font_name:'stylish_font.ttf'
@@ -48,6 +47,7 @@ Builder.load_string("""
                     spacing:dp(20)
                     MDFlatButton:
                         text:"Signup"
+                        on_press:root.gotosignup()
                     MDRaisedButton:
                         text:"Login"                    
 
@@ -73,4 +73,5 @@ Builder.load_string("""
 """)
 
 class Login(MDScreen):
-    pass
+    def gotosignup(self):
+        self.manager.current='Signup'
